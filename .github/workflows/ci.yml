@@ -34,4 +34,4 @@ jobs:
       - name: Run markdown lint
         run: |
           echo "Linting resume.md..."
-          npx remark resume.md --use remark-preset-lint-consistent --use remark-lint-emphasis-marker=_ --frail
+          npx remark resume.md --use remark-preset-lint-consistent --use remark-lint-emphasis-marker={"_": true} --frail
