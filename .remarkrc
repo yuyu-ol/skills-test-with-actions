@@ -1,6 +1,5 @@
 {
   "plugins": [
-    "remark-preset-lint-consistent",
-    ["remark-lint-emphasis-marker", "_"]
+    "remark-preset-lint-consistent"
   ]
 }
