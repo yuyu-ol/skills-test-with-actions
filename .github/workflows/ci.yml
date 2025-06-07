@@ -27,11 +27,11 @@ jobs:
       # Install dependencies
       - name: Install dependencies
         run: |
-          npm install remark-cli remark-preset-lint-consistent || exit 1
-          npm ls remark-cli remark-preset-lint-consistent
+          npm install remark-cli remark-preset-lint-consistent remark-lint-emphasis-marker || exit 1
+          npm ls remark-cli remark-preset-lint-consistent remark-lint-emphasis-marker
 
       # Run markdown lint on specific files
       - name: Run markdown lint
         run: |
           echo "Linting resume.md..."
-          npx remark resume.md --use remark-preset-lint-consistent --use remark-lint-emphasis-marker={"_": true} --frail
+          npx remark resume.md --use remark-preset-lint-consistent --frail
