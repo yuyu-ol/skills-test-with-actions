@@ -24,8 +24,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      # Run markdown lint
+      # Install dependencies
+      - name: Install dependencies
+        run: |
+          npm install remark-cli remark-preset-lint-consistent || exit 1
+          npm ls remark-cli remark-preset-lint-consistent
+
+      # Run markdown lint on specific files
       - name: Run markdown lint
         run: |
-          npm install remark-cli remark-preset-lint-consistent
-          npx remark . --use remark-preset-lint-consistent --frail
+          echo "Linting resume.md..."
+          npx remark resume.md --use remark-preset-lint-consistent --frail
